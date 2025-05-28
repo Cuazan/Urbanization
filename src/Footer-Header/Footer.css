@@ -1,0 +1,9 @@
+.footer {
+    height: 150px;
+    background-color: #8A9A5B;
+}
+
+.footer p {
+    text-align: center;
+    font-size: 1.2rem;
+}

@@ -1,0 +1,65 @@
+.urbContainer {
+    height: 500px;
+}
+
+@media (max-width: 768px) {
+    .urbContainer {
+        height: 300px;
+    }
+}
+
+
+.urbanization {
+    height: 40%;
+    width: 100%;
+    z-index: -1;
+    filter: brightness(0.8);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.titleContainer {
+    position: relative;
+    height: 43%;
+}
+
+.title {
+    position: absolute;
+    text-align: center;
+    z-index: 1;
+    bottom: 125px;
+    left: 0;
+    width: 100%;
+}
+
+.title h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.title p {
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.bodyUrbanization,
+.bodyHouses {
+    text-align: center;
+}
+
+.mission,
+.vision {
+    text-align: justify;
+    line-height: 2.0;
+    word-spacing: 5px;
+    font-size: 1.2rem;
+}
+
+.mikasa-logo {
+    width: 120px;
+    height: auto;
+    position: relative;
+    top: 0;
+}
