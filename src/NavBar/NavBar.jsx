@@ -13,7 +13,7 @@ export function NavBar() {
                            <Link className="nav-link" to="/urbanizations">Urbanizations</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Houses</a>
+                            <Link className="nav-link" to="/houses">Houses</Link>
                         </li>
                     </ul>
                 </div>

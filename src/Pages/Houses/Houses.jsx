@@ -26,32 +26,24 @@ export function Houses({ id }) {
                 <Link className="navbar-brand fw-bold" to="/">Mikasa</Link>
                 <div className="collapse navbar-collapse justify-content-end">
                     <ul className="navbar-nav">
-                        <li className="nav-item"><Link className="nav-link" to="/">Inicio</Link></li>
-                        <li className="nav-item"><Link className="nav-link" to="/urbanizations">Urbanizaciones</Link></li>
+                        <li className="nav-item"><Link className="nav-link" to="/">Home</Link></li>
+                        <li className="nav-item"><Link className="nav-link" to="/urbanizations">Urbanizations</Link></li>
                     </ul>
                 </div>
             </nav>
 
             <header className="houses-banner text-white d-flex align-items-center justify-content-center">
-                <h1 className="text-center display-5 fw-bold">Descubre tu nueva casa</h1>
+                <h1 className="text-center display-5 fw-bold">Discover your new house</h1>
             </header>
 
-            <div className="container my-4">
-                <div className="row">
-                    <div className="col-md-6">
-                        <input type="text" className="form-control" placeholder="Buscar por nombre o dimensión..." />
-                    </div>
-                </div>
-            </div>
-
-            <div className="container mb-5">
+            <div className="container mb-5 mt-5">
                 <div className="row g-4">
                     {houses.map(house => (
                         <div className="col-6 col-md-4 col-lg-2-4" key={house.id}>
                             <div className="card h-100 shadow-sm houseCard border-0">
                                 <img src={house.images} className="card-img-top" alt={house.name} />
                                 <div className="card-body">
-                                    <h5 className="card-title">${house.price}</h5>
+                                    <h5 className="card-title">${new Intl.NumberFormat("en-US").format(house.price)}</h5>
                                     <p className="card-text small">Availability: {house.available ? "Available" : "Not available"}</p>
                                     <p className="card-text small">Dimensions: {house.dimensions}</p>
                                     <p className="card-text small">Rent: {house.rentAllowed ? "Allowed" : "Not allowed"}</p>
