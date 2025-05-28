@@ -26,3 +26,4 @@ export async function GetHouses() {
         console.log(error)
     }
 }
+
