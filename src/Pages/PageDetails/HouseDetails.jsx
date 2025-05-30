@@ -1,6 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { GetHouses } from "../../Requester/Requester";
+import { ToggleAvailability } from "../../Requester/Requester";
 
 export function HouseDetails() {
     const { id } = useParams();
@@ -9,12 +10,19 @@ export function HouseDetails() {
     const getHouseById = async () => {
         try {
             const response = await GetHouses();
-
             const selectedHouse = response.find(h => h.id == id);
             setHouse(selectedHouse);
-            console.log(selectedHouse);
         } catch (error) {
             console.log(error);
+        }
+    };
+
+    const handleToggleAvailability = async () => {
+        try {
+            const updatedHouse = await ToggleAvailability(house.id, house.available);
+            setHouse(prev => ({ ...prev, available: updatedHouse.available }));
+        } catch (error) {
+            console.error("Error updating availability", error);
         }
     };
 
@@ -39,8 +47,14 @@ export function HouseDetails() {
             <div className="container mt-5">
                 <div className="row">
                     <div className="col-md-6 mb-4">
-                        <img src={house.imageURL} alt={house.name} className="img-fluid rounded shadow" />
-                        
+                        <img src={house.imageURL} alt={house.name} className="img-fluid rounded shadow mb-3" />
+
+                        <button
+                            className={`btn ${house.available ? "btn-danger" : "btn-success"} w-100`}
+                            onClick={handleToggleAvailability}
+                        >
+                            Purchase house
+                        </button>
                     </div>
 
                     <div className="col-md-6 border">

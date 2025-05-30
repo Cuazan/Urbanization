@@ -27,3 +27,13 @@ export async function GetHouses() {
     }
 }
 
+export async function ToggleAvailability(houseId, currentStatus) {
+    try {
+        const response = await axiosInstance.patch(`/api/houses/${houseId}`, {
+            available: !currentStatus
+        });
+        return response.data;
+    } catch (error) {
+        console.log(error);
+    }
+}
