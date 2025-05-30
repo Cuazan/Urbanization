@@ -3,6 +3,7 @@ import { Home } from '../Home';
 import { Urbanizations } from '../Pages/Urbanizations';
 import { Layout } from '../Pages/Layout';
 import { Houses } from '../Pages/Houses/Houses';
+import { HouseDetails } from '../Pages/PageDetails/HouseDetails';
 
 export function AppRoutes() {
     return (
@@ -11,6 +12,7 @@ export function AppRoutes() {
                 <Route path='/' element={<Home />} />
                 <Route path='/urbanizations' element={<Urbanizations />} />
                 <Route path='/houses' element={<Houses/>}/>
+                <Route path='/houses/:id' element={<HouseDetails/>} />
             </Route>
         </Routes>
     )

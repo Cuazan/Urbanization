@@ -19,20 +19,38 @@ export function Urbanizations() {
     getUrbs();
   }, [])
 
+  function FilterHouse(id) {
+
+  }
+
   const HTMLUrbanizations = urbanizations.map((urbanization) => {
     return (
+      <div className="card mb-4 shadow-sm" key={urbanization.id}>
+        <div className="row g-0">
+          <div className="col-md-4">
+            <img
+              src={urbanization.imageURL}
+              alt="Urbanization"
+              className="img-fluid h-100 object-fit-cover rounded-start"
+              style={{ objectFit: "cover" }}
+            />
+          </div>
+          <div className="col-md-8">
+            <div className="card-body">
+              <h4 className="card-title">{urbanization.name}</h4>
+              <p className="card-text">Dimensions: {urbanization.dimensions}</p>
+              <p className="card-text">Foundation date: {urbanization.foundationdate}</p>
+              <Link to={`/houses?urbanizationId=${urbanization.id}`} className="btn btn-primary">
+                See houses
+              </Link>
 
-      <div className="card rounded rounded-0 border border-0" key={urbanization.id}>
-        <img className="card-img-top" src={urbanization.images} alt="Card image"></img>
-        <div className="card-body">
-          <h4 className="card-title">{urbanization.name}</h4>
-          <p className="card-text">Dimensions: {urbanization.dimensions}</p> <p>Foundation date: {urbanization.foundationdate}</p>
-
-          <button className="btn btn-primary">See houses</button>
+            </div>
+          </div>
         </div>
       </div>
-    )
-  })
+    );
+  });
+
 
 
   return (
